@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Autoškola Hrubizna</title>
-    <link rel="icon" type="image/png" href="fotky/logo.png">
+    <link rel="icon" type="image/png" href="{{asset("fotky/logo.png")}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/mystylesheet.css">
+    <link rel="stylesheet" href="{{ asset('css/mystylesheet.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
@@ -18,8 +18,8 @@
     <div class="container">
         <nav class="navbar bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="fotky/logo.png" alt="logo" style="width: 125px; height: 75px">
+                <a class="navbar-brand" href="welcome.blade.php">
+                    <img src="{{asset("fotky/logo.png")}}" alt="logo" style="width: 125px; height: 75px">
                 </a>
             </div>
         </nav>
@@ -57,16 +57,16 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="fotky/seat_leon.png" class="d-block" alt="seat_leon">
+            <img src="{{asset("fotky/seat_leon.png")}}" class="d-block" alt="seat_leon">
         </div>
         <div class="carousel-item">
-            <img src="fotky/sanderoComet.png" class="d-block" alt="sanderoComet">
+            <img src="{{asset("fotky/sanderoComet.png")}}" class="d-block" alt="sanderoComet">
         </div>
         <div class="carousel-item">
-            <img src="fotky/volkswagen_tiguan.png" class="d-block" alt="ford_focus">
+            <img src="{{asset("fotky/volkswagen_tiguan.png")}}" class="d-block" alt="ford_focus">
         </div>
         <div class="carousel-item">
-            <img src="fotky/honda_civic.png" class="d-block" alt="honda_civic">
+            <img src="{{asset("fotky/honda_civic.png")}}" class="d-block" alt="honda_civic">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
