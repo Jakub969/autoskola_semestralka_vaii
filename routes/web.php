@@ -13,6 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/fotogaleria', function () {
+    return view('fotogaleria');
+});
+
+Route::get('/checkout', function () {
+    return view('checkout');
+});
+
+Route::get('/kurzy', function () {
+    return view('kurzy');
+});
+
+Route::get('/osobny_automobil', function () {
+    return view('osobny_automobil');
+});
+
+Route::get('/prihlasenie', function () {
+    return view('prihlasenie');
 });
