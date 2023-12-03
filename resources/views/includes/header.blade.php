@@ -22,7 +22,7 @@
     <div class="container">
         <nav class="navbar bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{asset("fotky/logo.png")}}" alt="logo" style="width: 125px; height: 75px">
                 </a>
             </div>

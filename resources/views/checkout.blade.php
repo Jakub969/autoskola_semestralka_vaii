@@ -18,7 +18,7 @@
 <div class="container">
     <main>
         <div class="py-5 text-center">
-            <a href="{{ url('/home') }}"><img class="d-block mx-auto mb-2" src="{{asset("fotky/logo.png")}}" alt="logo" style="width: 125px; height: 75px"></a>
+            <a href="{{ url('/') }}"><img class="d-block mx-auto mb-2" src="{{asset("fotky/logo.png")}}" alt="logo" style="width: 125px; height: 75px"></a>
             <h2>Checkout form</h2>
             <p class="lead">Prosím vyplňte formulár o platbe.</p>
         </div>
