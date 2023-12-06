@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
 
 Route::get('/fotogaleria', function () {
     return view('fotogaleria');
@@ -36,3 +37,7 @@ Route::get('/osobny_automobil', function () {
 Route::get('/prihlasenie', function () {
     return view('prihlasenie');
 });
+
+Route::resource('users', 'UserController');
+
+Route::post('/login', 'Auth\LoginController@login')->name('login');
