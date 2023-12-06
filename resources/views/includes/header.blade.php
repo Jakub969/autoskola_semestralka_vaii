@@ -52,8 +52,8 @@
                 <li><a class="nav-link active" aria-current="page" href="#">Kontakty</a></li>
             </ul>
             <div class="text-end">
-                <a href="{{url('/prihlasenie')}}" class="btn btn-outline-light me-2 mb-2">Prihlásiť sa</a>
-                <button type="button" class="btn btn-warning mb-2">Zaregistrovať sa</button>
+                <a href="{{url('/login')}}" class="btn btn-outline-light me-2 mb-2">Prihlásiť sa</a>
+                <a href="{{url('/register')}}"  class="btn btn-warning mb-2">Zaregistrovať sa</a>
             </div>
         </div>
     </div>
