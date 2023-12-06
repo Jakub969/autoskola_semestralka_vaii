@@ -1,4 +1,5 @@
 <footer class="pt-5 bg-dark mt-auto text-white">
+    <script src="{{ asset('js/validacia_formulara.js') }}"></script>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -14,13 +15,14 @@
             </div>
 
             <div class="col-md-5 offset-md-1 mb-3">
-                <form>
+                <form id="myForm">
                     <h5>Prihláste sa na odber aby ste získali novinky.</h5>
                     <p>Získajte prehľad toho, čo je u nás nové a vzrušujúce.</p>
                     <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                        <label for="newsletter1" class="visually-hidden">Email address</label>
-                        <input id="newsletter1" type="text" class="form-control" placeholder="Emailová adresa">
-                        <button class="btn btn-primary" type="button">Odoberať</button>
+                        <label for="email" class="visually-hidden">Email address</label>
+                        <input id="email" type="text" class="form-control" placeholder="Emailová adresa">
+                        <span id="emailError" style="color:red"></span>
+                        <input class="btn btn-primary" type="submit">
                     </div>
                 </form>
             </div>
