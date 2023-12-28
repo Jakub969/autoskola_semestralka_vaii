@@ -40,11 +40,11 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{url('/osobny_automobil')}}">Osobný automobil</a></li>
-                        <li><a class="dropdown-item" href="#">Motocykel</a></li>
-                        <li><a class="dropdown-item" href="#">Nákladný automobil</a></li>
-                        <li><a class="dropdown-item" href="#">Autobus</a></li>
-                        <li><a class="dropdown-item" href="#">Traktor</a></li>
-                        <li><a class="dropdown-item" href="#">Príves</a></li>
+                        <li><a class="dropdown-item" href="{{url('/motocykel')}}">Motocykel</a></li>
+                        <li><a class="dropdown-item" href="{{url('/nakladny_automobil')}}">Nákladný automobil</a></li>
+                        <li><a class="dropdown-item" href="{{url('/autobus')}}">Autobus</a></li>
+                        <li><a class="dropdown-item" href="{{url('/traktor')}}">Traktor</a></li>
+                        <li><a class="dropdown-item" href="{{url('/prives')}}">Príves</a></li>
                     </ul>
                 </li>
                 <li><a class="nav-link active" aria-current="page" href="#">Termíny</a></li>

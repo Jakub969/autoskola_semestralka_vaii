@@ -35,9 +35,26 @@ Route::get('/osobny_automobil', function () {
     return view('osobny_automobil');
 });
 
-Route::get('/prihlasenie', function () {
-    return view('prihlasenie');
+Route::get('/motocykel', function () {
+    return view('motocykel');
 });
+
+Route::get('/nakladny_automobil', function () {
+    return view('nakladny_automobil');
+});
+
+Route::get('/autobus', function () {
+    return view('autobus');
+});
+
+Route::get('/traktor', function () {
+    return view('traktor');
+});
+
+Route::get('/prives', function () {
+    return view('prives');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
