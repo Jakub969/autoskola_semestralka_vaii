@@ -55,6 +55,14 @@ Route::get('/prives', function () {
     return view('prives');
 });
 
+Route::get('/terminy', function () {
+    return view('terminy');
+});
+
+Route::get('/kontakty', function () {
+    return view('kontakty');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

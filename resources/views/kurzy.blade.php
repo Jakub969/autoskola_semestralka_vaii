@@ -15,7 +15,7 @@
                         <p class="card-text">Osobný automobil</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn">
-                                <a href="{{url('/osobny_automobil')}}" class="btn btn-sm btn-outline-secondary">View</a>
+                                <a href="{{url('/osobny_automobil')}}" class="btn btn-sm btn-outline-secondary">Zobraziť</a>
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                         <p class="card-text">Motocykel</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn">
-                                <a href="{{url('/motocykel')}}" class="btn btn-sm btn-outline-secondary">View</a>
+                                <a href="{{url('/motocykel')}}" class="btn btn-sm btn-outline-secondary">Zobraziť</a>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                         <p class="card-text">Nákladný automobil</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn">
-                                <a href="{{url('/nakladny_automobil')}}" class="btn btn-sm btn-outline-secondary">View</a>
+                                <a href="{{url('/nakladny_automobil')}}" class="btn btn-sm btn-outline-secondary">Zobraziť</a>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                         <p class="card-text">Autobus</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn">
-                                <a href="{{url('/autobus')}}" class="btn btn-sm btn-outline-secondary">View</a>
+                                <a href="{{url('/autobus')}}" class="btn btn-sm btn-outline-secondary">Zobraziť</a>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                         <p class="card-text">Traktor</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn">
-                                <a href="{{url('/traktor')}}" class="btn btn-sm btn-outline-secondary">View</a>
+                                <a href="{{url('/traktor')}}" class="btn btn-sm btn-outline-secondary">Zobraziť</a>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                         <p class="card-text">Príves</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn">
-                                <a href="{{url('/prives')}}" class="btn btn-sm btn-outline-secondary">View</a>
+                                <a href="{{url('/prives')}}" class="btn btn-sm btn-outline-secondary">Zobraziť</a>
                             </div>
                         </div>
                     </div>

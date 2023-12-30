@@ -47,9 +47,9 @@
                         <li><a class="dropdown-item" href="{{url('/prives')}}">Príves</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link active" aria-current="page" href="#">Termíny</a></li>
+                <li><a class="nav-link active" aria-current="page" href="{{url('/terminy')}}">Termíny</a></li>
                 <li><a class="nav-link active" aria-current="page" href="{{ url('/fotogaleria') }}">Fotogaléria</a></li>
-                <li><a class="nav-link active" aria-current="page" href="#">Kontakty</a></li>
+                <li><a class="nav-link active" aria-current="page" href="{{ url('/kontakty') }}">Kontakty</a></li>
             </ul>
             <div class="text-end">
                 <a href="{{url('/login')}}" class="btn btn-outline-light me-2 mb-2">Prihlásiť sa</a>
