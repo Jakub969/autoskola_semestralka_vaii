@@ -6,7 +6,6 @@
 
     <div class="album py-5 bg-light">
     <div class="container">
-        <!--TODO nastaviť card body aby bolo dole-->
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div class="col">
                 <div class="card shadow-sm h-100">

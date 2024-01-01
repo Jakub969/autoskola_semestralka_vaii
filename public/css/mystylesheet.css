@@ -63,3 +63,14 @@ body {
 .center-last-column .col:last-child {
     margin: 0 auto;
 }
+
+@media screen and (max-width: 600px) {
+    .googlemap {
+        margin: 10px !important;
+    }
+    .googlemap > iframe {
+        width: 100% !important;
+        height: auto !important;
+        min-height: calc(100vh - 20px);
+    }
+}
