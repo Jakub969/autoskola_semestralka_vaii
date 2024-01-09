@@ -10,6 +10,25 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
+                    @if(isset($drivingSessions) && $drivingSessions->count() > 0)
+                        <h3>Your Driving Sessions:</h3>
+                        <table>
+                            <tr>
+                                <th>Session Date</th>
+                                <th>Duration</th>
+                                <th>Location</th>
+                                <!-- Add more columns as needed -->
+                            </tr>
+                            @foreach($drivingSessions as $session)
+                                <tr>
+                                    <td>{{ $session->session_date }}</td>
+                                    <td>{{ $session->duration }}</td>
+                                    <td>{{ $session->location }}</td>
+                                    <!-- Add more fields as needed -->
+                                </tr>
+                            @endforeach
+                        </table>
+                    @endif
                 </div>
             </div>
         </div>

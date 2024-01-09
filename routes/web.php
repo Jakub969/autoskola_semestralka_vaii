@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,7 @@ Route::get('/terminy', function () {
 Route::get('/kontakty', function () {
     return view('kontakty');
 });
+Route::get('/dashboard', [DashboardController::class, 'showDashboard']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
