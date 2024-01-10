@@ -11,22 +11,28 @@
                 <div class="p-6 text-gray-900">
                     @if(isset($drivingSessions) && $drivingSessions->count() > 0)
                         <h3>Tvoje prihlásené jazdy:</h3>
-                        <table class="full-width-centered">
-                            <tr>
-                                <th>Konanie jazdy</th>
-                                <th>Trvanie (min.)</th>
-                                <th>Miesto konania</th>
-                                <!-- Add more columns as needed -->
-                            </tr>
-                            @foreach($drivingSessions as $session)
+                        <div class="table-responsive">
+                            <table class="full-width-centered">
                                 <tr>
-                                    <td>{{ $session->session_date }}</td>
-                                    <td>{{ $session->duration }}</td>
-                                    <td>{{ $session->location }}</td>
-                                    <!-- Add more fields as needed -->
+                                    <th class="with-border">Konanie jazdy</th>
+                                    <th class="with-border">Trvanie (min.)</th>
+                                    <th class="with-border">Miesto konania</th>
+                                    <th class="with-border">Stav</th>
+                                    <th class="with-border">Auto</th>
+                                    <th class="with-border">Skupina</th>
                                 </tr>
-                            @endforeach
-                        </table>
+                                @foreach($drivingSessions as $session)
+                                    <tr>
+                                        <td class="with-border">{{ $session->session_date }}</td>
+                                        <td class="with-border">{{ $session->duration }}</td>
+                                        <td class="with-border">{{ $session->location }}</td>
+                                        <td class="with-border">{{ $session->status}}</td>
+                                        <td class="with-border">{{ $session->make }} {{ $session->model }}</td>
+                                        <td class="with-border">{{ $session->type }}</td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
                     @endif
                 </div>
             </div>
