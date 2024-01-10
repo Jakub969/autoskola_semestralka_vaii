@@ -74,3 +74,8 @@ body {
         min-height: calc(100vh - 20px);
     }
 }
+
+table.full-width-centered {
+    width: 100%;
+    text-align: center;
+}

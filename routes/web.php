@@ -63,11 +63,11 @@ Route::get('/terminy', function () {
 Route::get('/kontakty', function () {
     return view('kontakty');
 });
-Route::get('/dashboard', [DashboardController::class, 'showDashboard']);
+Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard', function () {
+/*Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');*/
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

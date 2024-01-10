@@ -15,7 +15,7 @@ class DashboardController extends Controller
         $payment = Payment::where('email', $user->email)->first();
 
         if ($payment) {
-            $drivingSessions = DrivingSession::where('user_id', $payment->user_id)->get();
+            $drivingSessions = DrivingSession::where('student_id', $payment->user_id)->get();
         } else {
             $drivingSessions = collect();
         }

@@ -3,13 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Eloquent;
 use Illuminate\Database\Eloquent\Model;
 
+
+/**
+ * @mixin Eloquent
+ * */
 class DrivingSession extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',
+        'student_id',
         'instructor_id',
         'session_date',
         'duration',
