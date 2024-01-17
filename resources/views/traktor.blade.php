@@ -20,7 +20,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">780€</h1>
-                            <a href="{{ url('/checkout') }}" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
+                            <a href="{{ url('/checkout') }}?price=780&course=Traktor T (trojmesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">980€</h1>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</button>
+                            <a href="{{ url('/checkout') }}?price=980&course=Traktor T (dvojmesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">1190€</h1>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</button>
+                            <a href="{{ url('/checkout') }}?price=1190&course=Traktor T (mesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>

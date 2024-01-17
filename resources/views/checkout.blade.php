@@ -33,12 +33,12 @@
                     <li class="list-group-item d-flex justify-content-between lh-sm">
                         <div>
                             <h6 class="my-0">Názov kurzu</h6>
-                            <small class="text-muted">Osobný automobil (trojmesačný)</small>
+                            <small class="text-muted">{{ $course }}</small>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Celkovo (EUR)</span>
-                        <strong>1050€</strong>
+                        <strong>{{ $price }}€</strong>
                     </li>
                 </ul>
             </div>

@@ -15,12 +15,13 @@
             </div>
 
             <div class="col-md-5 offset-md-1 mb-3">
-                <form id="myForm">
+                <form id="myForm" method="POST" action="/subscribe">
+                    @csrf
                     <h5>Prihláste sa na odber aby ste získali novinky.</h5>
                     <p>Získajte prehľad toho, čo je u nás nové a vzrušujúce.</p>
                     <div class="d-flex flex-column flex-sm-row w-100 gap-2">
                         <label for="email" class="visually-hidden">Email address</label>
-                        <input id="email" type="text" class="form-control" placeholder="Emailová adresa">
+                        <input id="email" name="email" type="text" class="form-control" placeholder="Emailová adresa">
                         <span id="emailError" style="color:red"></span>
                         <input class="btn btn-primary" type="submit">
                     </div>

@@ -20,8 +20,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">660€</h1>
-                            <a href="{{ url('/checkout') }}" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
-                        </div>
+                            <a href="{{ url('/checkout') }}?price=660&course=Malý motocykel AM (trojmesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>                        </div>
                     </div>
                 </div>
                 <div class="col">
@@ -31,8 +30,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">760€</h1>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</button>
-                        </div>
+                            <a href="{{ url('/checkout') }}?price=760&course=Malý motocykel AM (dvojmesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>                        </div>
                     </div>
                 </div>
                 <div class="col">
@@ -42,7 +40,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">860€</h1>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</button>
+                            <a href="{{ url('/checkout') }}?price=860&course=Malý motocykel AM (mesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +59,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">760€</h1>
-                            <a href="{{ url('/checkout') }}" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
+                            <a href="{{ url('/checkout') }}?price=760&course=Veľký motocykel A1 (trojmesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>
@@ -72,7 +70,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">860€</h1>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</button>
+                            <a href="{{ url('/checkout') }}?price=860&course=Veľký motocykel A1 (dvojmesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>
@@ -83,7 +81,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">960€</h1>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</button>
+                            <a href="{{ url('/checkout') }}?price=960&course=Veľký motocykel A1 (mesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>
@@ -102,7 +100,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">760€</h1>
-                            <a href="{{ url('/checkout') }}" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
+                            <a href="{{ url('/checkout') }}?price=760&course=Veľký motocykel A2 (trojmesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>
@@ -113,7 +111,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">860€</h1>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</button>
+                            <a href="{{ url('/checkout') }}?price=860&course=Veľký motocykel A2 (dvojmesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>
@@ -124,7 +122,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">960€</h1>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</button>
+                            <a href="{{ url('/checkout') }}?price=960&course=Veľký motocykel A2 (mesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>
@@ -143,7 +141,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">860€</h1>
-                            <a href="{{ url('/checkout') }}" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
+                            <a href="{{ url('/checkout') }}?price=860&course=Veľký motocykel A (trojmesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>
@@ -154,7 +152,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">960€</h1>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</button>
+                            <a href="{{ url('/checkout') }}?price=960&course=Veľký motocykel A (dvojmesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>
@@ -165,7 +163,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">1060€</h1>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</button>
+                            <a href="{{ url('/checkout') }}?price=1060&course=Veľký motocykel A (mesačný)" class="w-100 btn btn-lg btn-outline-primary">Prihlásiť sa</a>
                         </div>
                     </div>
                 </div>

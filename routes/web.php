@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubscriberController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 
@@ -24,9 +26,8 @@ Route::get('/fotogaleria', function () {
     return view('fotogaleria');
 });
 
-Route::get('/checkout', function () {
-    return view('checkout');
-});
+Route::get('/checkout', [CheckoutController::class, 'index']);
+
 
 Route::get('/kurzy', function () {
     return view('kurzy');
@@ -64,6 +65,9 @@ Route::get('/kontakty', function () {
     return view('kontakty');
 });
 Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::post('/subscribe', [SubscriberController::class, 'store']);
+
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');
