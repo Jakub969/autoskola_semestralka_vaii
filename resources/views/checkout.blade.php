@@ -5,7 +5,7 @@
     <title>Checkout</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
 
-
+    <script src="{{ asset('js/animacia.js') }}"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -44,11 +44,12 @@
             </div>
             <div class="col-md-7 col-lg-8">
                 <h4 class="mb-3">Fakturačná adresa</h4>
-                <form class="needs-validation was-validated" novalidate="">
+                <form class="needs-validation was-validated" novalidate="" method="POST" action="/payments">
+                    @csrf
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="firstName" class="form-label">Meno</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="firstName" name="first_name" placeholder="" value="" required="">
                             <div class="invalid-feedback">
                                 Meno je povinné.
                             </div>
@@ -56,7 +57,7 @@
 
                         <div class="col-sm-6">
                             <label for="lastName" class="form-label">Priezvisko</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="lastName" name="last_name" placeholder="" value="" required="">
                             <div class="invalid-feedback">
                                 Priezvisko je povinné.
                             </div>
@@ -64,7 +65,7 @@
 
                         <div class="col-12">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com" required="">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required="">
                             <div class="invalid-feedback">
                                 Prosím zadajte validnú emailovú adresu.
                             </div>
@@ -72,7 +73,7 @@
 
                         <div class="col-12">
                             <label for="address" class="form-label">Adresa</label>
-                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                            <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required="">
                             <div class="invalid-feedback">
                                 Prosím zadajte správnu adresu.
                             </div>
@@ -80,7 +81,7 @@
 
                         <div class="col-12">
                             <label for="address2" class="form-label">Adresa 2 <span class="text-muted">(Nepovinné)</span></label>
-                            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                            <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment or suite">
                         </div>
 
                         <hr class="my-4">
@@ -89,15 +90,15 @@
 
                         <div class="my-3">
                             <div class="form-check">
-                                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                                <input id="credit" name="payment_method" type="radio" class="form-check-input" checked="" required="" value="Kreditná karta">
                                 <label class="form-check-label" for="credit">Kreditná karta</label>
                             </div>
                             <div class="form-check">
-                                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+                                <input id="debit" name="payment_method" type="radio" class="form-check-input" required="" value="Debetná karta">
                                 <label class="form-check-label" for="debit">Debetná karta</label>
                             </div>
                             <div class="form-check">
-                                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
+                                <input id="paypal" name="payment_method" type="radio" class="form-check-input" required="" value="PayPal">
                                 <label class="form-check-label" for="paypal">PayPal</label>
                             </div>
                         </div>

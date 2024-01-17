@@ -16,12 +16,13 @@ class Payment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
         'course_name',
         'total_amount',
         'first_name',
         'last_name',
         'email',
-        'address'
+        'address',
+        'address2',
+        'payment_method'
     ];
 }

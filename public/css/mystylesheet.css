@@ -87,3 +87,20 @@ table.full-width-centered {
 th.with-border, td.with-border {
     border: 1px solid black;
 }
+
+.success-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-image: url("/public/fotky/success-icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fadeOut 2s linear;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

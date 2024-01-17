@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriberController;
 use Illuminate\Support\Facades\Route;
@@ -67,6 +68,8 @@ Route::get('/kontakty', function () {
 Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::post('/subscribe', [SubscriberController::class, 'store']);
+
+Route::post('/payments', [PaymentController::class, 'processPayment']);
 
 
 /*Route::get('/dashboard', function () {
