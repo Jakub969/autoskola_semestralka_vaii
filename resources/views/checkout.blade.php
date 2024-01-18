@@ -3,9 +3,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Checkout</title>
+    <link rel="stylesheet" href="{{ asset('css/mystylesheet.css') }}">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="{{ asset('js/animacia.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -24,7 +26,7 @@
         </div>
 
         <div class="row g-5">
-            <div class="col-md-5 col-lg-4 order-md-last">
+            <div class="col-md-5 col-lg-3 order-md-last">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="text-primary">Váš košík</span>
                     <span class="badge bg-primary rounded-pill">1</span>
@@ -107,7 +109,7 @@
                             <div class="col-md-6">
                                 <label for="cc-name" class="form-label">Meno na karte</label>
                                 <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                                <small class="text-muted">Full name as displayed on card</small>
+                                <small class="text-muted">Celé meno ako je zobrazené na karte</small>
                                 <div class="invalid-feedback">
                                     Meno na karte je povinné
                                 </div>
@@ -139,7 +141,6 @@
                         </div>
 
                         <hr class="my-4">
-
                         <button class="w-100 btn btn-primary btn-lg" type="submit">Pokračovať k zaplateniu</button>
                     </div>
                 </form>

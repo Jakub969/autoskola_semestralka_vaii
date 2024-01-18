@@ -92,15 +92,34 @@ th.with-border, td.with-border {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 100px;
-    height: 100px;
-    background-image: url("/public/fotky/success-icon.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    animation: fadeOut 2s linear;
+    width: 50vh;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    animation: fadeOut 3s linear;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%);
 }
+
+.success-animation i {
+    font-size: 100px;
+    color: green;
+}
+
+.success-animation p {
+    color: black;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+
 
 @keyframes fadeOut {
     from { opacity: 1; }
     to { opacity: 0; }
 }
+

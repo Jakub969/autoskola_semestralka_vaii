@@ -1,23 +1,33 @@
-document.querySelector('.btn-primary').addEventListener('click', function(event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('.btn-primary').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        var successContainer = document.createElement('div');
+        successContainer.classList.add('success-animation');
+
+        var successIcon = document.createElement('i');
+        successIcon.classList.add('fas', 'fa-check');
+        successContainer.appendChild(successIcon);
+
+        var successText = document.createElement('p');
+        successText.textContent = 'Platba prebehla úspešne!';
+        successContainer.appendChild(successText);
+
+        document.body.appendChild(successContainer);
 
 
-    var successIcon = document.createElement('div');
-    successIcon.classList.add('success-animation');
-    document.body.appendChild(successIcon);
+        setTimeout(function() {
+            if (document.body.contains(successContainer)) {
+                document.body.removeChild(successContainer);
+            }
 
-
-    setTimeout(function() {
-
-        document.body.removeChild(successIcon);
-
-
-        axios.post('/payments', new FormData(document.querySelector('form')))
-            .then(function(response) {
-                window.location.href = '/home';
-            })
-            .catch(function(error) {
-                console.error(error);
-            });
-    }, 2000);
+            axios.post('/payments', new FormData(document.querySelector('form')))
+                .then(function(response) {
+                    window.location.href = '/';
+                })
+                .catch(function(error) {
+                    console.error(error);
+                });
+        }, 2000);
+    });
 });

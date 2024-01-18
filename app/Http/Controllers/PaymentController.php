@@ -24,7 +24,6 @@ class PaymentController extends Controller
 
 
         $payment = Payment::create($validatedData);
-        return redirect('/');
     }
 
 }
