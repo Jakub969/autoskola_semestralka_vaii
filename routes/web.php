@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriberController;
@@ -71,6 +72,7 @@ Route::post('/subscribe', [SubscriberController::class, 'store']);
 
 Route::post('/payments', [PaymentController::class, 'processPayment']);
 
+Route::post('/messages', [MessageController::class, 'store']);
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');

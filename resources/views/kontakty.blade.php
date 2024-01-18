@@ -25,6 +25,8 @@
 
                         <div class="card-body">
                             <!--Header-->
+                            <form action="/messages" method="POST">
+                                @csrf
                             <div class="form-header blue accent-1">
                                 <h3><i class="fas fa-envelope"></i> Napíšte nám:</h3>
                             </div>
@@ -36,31 +38,34 @@
                             <div class="mb-3">
                                 <i class="bi bi-person"></i>
                                 <label for="form-name">Vaše meno</label>
-                                <input type="text" id="form-name" class="form-control">
+                                <input type="text" id="form-name" name="name" class="form-control" placeholder="" value="" required="">
+                                <div class="invalid-feedback">
+                                    Meno je povinné.
+                                </div>
                             </div>
 
                             <div class="mb-3">
                                 <i class="bi bi-envelope-at-fill"></i>
                                 <label for="form-email">Váš email</label>
-                                <input type="text" id="form-email" class="form-control">
+                                <input type="text" id="form-email" name="email" class="form-control" placeholder="you@example.com" value="" required="">
                             </div>
 
                             <div class="mb-3">
                                 <i class="bi bi-hash"></i>
                                 <label for="form-Subject">Typ správy</label>
-                                <input type="text" id="form-Subject" class="form-control">
+                                <input type="text" id="form-Subject" name="subject" class="form-control" placeholder="" value="" required="">
                             </div>
 
                             <div class="mb-3">
                                 <i class="bi bi-chat-left-text"></i>
                                 <label for="form-text">Správa</label>
-                                <textarea id="form-text" class="md-textarea form-control" rows="3"></textarea>
+                                <textarea id="form-text" class="md-textarea form-control" name="message" rows="3" placeholder="Váš text." required=""></textarea>
                             </div>
 
                             <div class="text-center mt-4">
-                                <button class="btn btn-primary">Poslať</button>
+                                <input class="btn btn-primary" type="submit">
                             </div>
-
+                            </form>
                         </div>
 
                     </div>
