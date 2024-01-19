@@ -5,6 +5,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 
@@ -73,6 +74,8 @@ Route::post('/subscribe', [SubscriberController::class, 'store']);
 Route::post('/payments', [PaymentController::class, 'processPayment']);
 
 Route::post('/messages', [MessageController::class, 'store']);
+
+Route::get('/update-users', [UserController::class, 'show'])->middleware(['auth', 'verified'])->name('update-users');
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');
