@@ -75,7 +75,9 @@ Route::post('/payments', [PaymentController::class, 'processPayment']);
 
 Route::post('/messages', [MessageController::class, 'store']);
 
-Route::get('/update-users', [UserController::class, 'show'])->middleware(['auth', 'verified'])->name('update-users');
+//Route::get('/update-users', [UserController::class, 'show'])->middleware(['auth', 'verified'])->name('update-users');
+
+Route::get('/users/update-users', [UserController::class, 'show'])->middleware('admin')->name('update-users');
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');

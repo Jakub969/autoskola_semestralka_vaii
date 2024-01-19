@@ -11,7 +11,7 @@ class UserController extends Controller
     public function show()
     {
         $users = User::all();
-        return view('users.index', compact('users'));
+        return view('users.update-users', compact('users'));
     }
 
     public function edit(User $user)
