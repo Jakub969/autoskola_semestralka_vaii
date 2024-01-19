@@ -24,6 +24,13 @@
                         </x-nav-link>
                     @endif
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    @if(Auth::user()->role == 'instruktor' || Auth::user()->role == 'admin')
+                        <x-nav-link :href="route('driving-sessions')" :active="request()->routeIs('driving-sessions')">
+                            {{ __('Termíny jazd') }}
+                        </x-nav-link>
+                    @endif
+                </div>
 
             </div>
 

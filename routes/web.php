@@ -6,8 +6,10 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\UserController;
+use App\Models\DrivingSession;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DrivingSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +80,13 @@ Route::post('/messages', [MessageController::class, 'store']);
 //Route::get('/update-users', [UserController::class, 'show'])->middleware(['auth', 'verified'])->name('update-users');
 
 Route::get('/users/update-users', [UserController::class, 'show'])->middleware('admin')->name('update-users');
+
+Route::post('/driving-sessions', [DrivingSessionController::class, 'store']);
+
+//Route::get('/users/driving-sessions', [DrivingSessionController::class, 'show'])->middleware(['admin', 'instruktor'])->name('driving-sessions');
+Route::get('/users/driving-sessions', function () {
+    return view('users.driving-sessions', ['drivingSessions' => DrivingSession::all()]);
+})->name('driving-sessions');
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');

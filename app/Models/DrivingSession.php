@@ -19,6 +19,7 @@ class DrivingSession extends Model
         'session_date',
         'duration',
         'location',
-        'status'
+        'status',
+        'car_id'
     ];
 }

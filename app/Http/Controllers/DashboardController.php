@@ -25,6 +25,6 @@ class DashboardController extends Controller
             $drivingSessions = collect();
         }
 
-        return view('dashboard', ['drivingSessions' => $drivingSessions]);
+        return view('/users/dashboard', ['drivingSessions' => $drivingSessions]);
     }
 }
