@@ -123,3 +123,12 @@ th.with-border, td.with-border {
     to { opacity: 0; }
 }
 
+.highlight {
+    background-color: yellow;
+}
+
+.button-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}

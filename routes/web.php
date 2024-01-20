@@ -88,6 +88,9 @@ Route::get('/users/driving-sessions', function () {
     return view('users.driving-sessions', ['drivingSessions' => DrivingSession::all()]);
 })->name('driving-sessions');
 
+Route::post('/update-user-roles', [UserController::class, 'updateRoles']);
+
+
 /*Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/
