@@ -1,4 +1,5 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
+Can you make this responsive? <meta name="csrf-token" content="{{ csrf_token() }}">
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -42,8 +43,9 @@
 
                             </table>
                         </div>
-                        <div class="button-container">
-                            <button class="w-25 btn btn-lg btn-outline-primary" onclick="submitChanges()">Potvrdiť zmeny</button>
+                        <br>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-lg btn-outline-primary" onclick="submitChanges()">Potvrdiť zmeny</button>
                         </div>
                     @endif
                 </div>
@@ -51,3 +53,4 @@
         </div>
     </div>
 </x-app-layout>
+

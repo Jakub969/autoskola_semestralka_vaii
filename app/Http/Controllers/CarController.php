@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class CarController extends Controller
 {
@@ -41,6 +42,6 @@ class CarController extends Controller
     public function destroy(Car $car)
     {
         $car->delete();
-        return redirect()->route('update-car');
+        return Redirect::to('/users/update-car');
     }
 }

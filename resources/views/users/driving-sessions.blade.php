@@ -6,71 +6,87 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <form action="/driving-sessions" method="POST">
-                        @csrf
-                        <label for="session_date">Dátum jazdy:</label>
-                        <input type="datetime-local" id="session_date" name="session_date" required>
+        <div class="container">
 
 
-                        <label for="duration">Trvanie jazdy:</label>
-                        <select id="duration" name="duration">
-                            <option value="60">60</option>
-                            <option value="90">90</option>
-                            <option value="120">120</option>
-                        </select>
+                    <div class="card">
 
-                        <label for="location">Miesto konania:</label>
-                        <select id="location" name="location">
-                            <option value="Spišská Nová Ves">Spišská Nová Ves</option>
-                            <option value="Žilina">Žilina</option>
-                            <option value="Košice">Košice</option>
-                        </select>
+                        <div class="card-body">
+                            <form action="/driving-sessions" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="session_date">Dátum jazdy:</label>
+                                    <input type="datetime-local" id="session_date" name="session_date" class="form-control" required>
+                                </div>
 
-                        <label for="session_category">Kategoria vozidla:</label>
-                        <select id="session_category" name="session_category">
-                            <option value="Osobný automobil B">Osobný automobil B</option>
-                            <option value="Malý motocykel AM">Malý motocykel AM</option>
-                            <option value="Veľký motocykel A1">Veľký motocykel A1</option>
-                            <option value="Veľký motocykel A2">Veľký motocykel A2</option>
-                            <option value="Veľký motocykel A">Veľký motocykel A</option>
-                            <option value="Nákladný automobil C">Nákladný automobil C</option>
-                            <option value="Autobus D">Autobus D</option>
-                            <option value="Traktor T">Traktor T</option>
-                            <option value="Príves">Príves</option>
-                        </select>
-                        <div class="button-container">
-                        <input class="w-25 btn btn-lg btn-outline-primary" type="submit" value="Pridať">
+                                <div class="form-group">
+                                    <label for="duration">Trvanie jazdy:</label>
+                                    <select id="duration" name="duration" class="form-control">
+                                        <option value="60">60</option>
+                                        <option value="90">90</option>
+                                        <option value="120">120</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="location">Miesto konania:</label>
+                                    <select id="location" name="location" class="form-control">
+                                        <option value="Spišská Nová Ves">Spišská Nová Ves</option>
+                                        <option value="Žilina">Žilina</option>
+                                        <option value="Košice">Košice</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="session_category">Kategoria vozidla:</label>
+                                    <select id="session_category" name="session_category" class="form-control">
+                                        <option value="Osobný automobil B">Osobný automobil B</option>
+                                        <option value="Malý motocykel AM">Malý motocykel AM</option>
+                                        <option value="Veľký motocykel A1">Veľký motocykel A1</option>
+                                        <option value="Veľký motocykel A2">Veľký motocykel A2</option>
+                                        <option value="Veľký motocykel A">Veľký motocykel A</option>
+                                        <option value="Nákladný automobil C">Nákladný automobil C</option>
+                                        <option value="Autobus D">Autobus D</option>
+                                        <option value="Traktor T">Traktor T</option>
+                                        <option value="Príves">Príves</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <div class="form-group text-center">
+                                    <input class="btn btn-lg btn-outline-primary" type="submit" value="Pridať">
+                                </div>
+                            </form>
+
+                            @if(isset($drivingSessions) && $drivingSessions->count() > 0)
+                                <h3>Termíny jazd:</h3>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>Konanie jazdy</th>
+                                            <th>Trvanie (min.)</th>
+                                            <th>Miesto konania</th>
+                                            <th>Stav</th>
+                                            <th>Skupina</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($drivingSessions as $session)
+                                            <tr>
+                                                <td>{{ $session->session_date }}</td>
+                                                <td>{{ $session->duration }}</td>
+                                                <td>{{ $session->location }}</td>
+                                                <td>{{ $session->status }}</td>
+                                                <td>{{ $session->session_category }}</td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            @endif
                         </div>
-                    </form>
+                    </div>
 
-                @if(isset($drivingSessions) && $drivingSessions->count() > 0)
-                        <h3>Termíny jazd:</h3>
-                        <div class="table-responsive">
-                            <table class="full-width-centered">
-                                <tr>
-                                    <th class="with-border">Konanie jazdy</th>
-                                    <th class="with-border">Trvanie (min.)</th>
-                                    <th class="with-border">Miesto konania</th>
-                                    <th class="with-border">Stav</th>
-                                    <th class="with-border">Skupina</th>
-                                </tr>
-                                @foreach($drivingSessions as $session)
-                                    <tr>
-                                        <td class="with-border">{{ $session->session_date }}</td>
-                                        <td class="with-border">{{ $session->duration }}</td>
-                                        <td class="with-border">{{ $session->location }}</td>
-                                        <td class="with-border">{{ $session->status }}</td>
-                                        <td class="with-border">{{ $session->session_category }}</td>
-                                    </tr>
-                                @endforeach
-                            </table>
-                        </div>
-                    @endif
-                </div>
-            </div>
         </div>
     </div>
 </x-app-layout>
