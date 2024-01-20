@@ -11,29 +11,39 @@
                 <div class="p-6 text-gray-900">
                     <form action="/driving-sessions" method="POST">
                         @csrf
+                        <label for="session_date">Dátum jazdy:</label>
+                        <input type="datetime-local" id="session_date" name="session_date" required>
 
-                        <label for="instructor_id">Instructor ID:</label>
-                        <input type="text" id="instructor_id" name="instructor_id">
 
-                        <label for="student_id">Student ID:</label>
-                        <input type="text" id="student_id" name="student_id">
+                        <label for="duration">Trvanie jazdy:</label>
+                        <select id="duration" name="duration">
+                            <option value="60">60</option>
+                            <option value="90">90</option>
+                            <option value="120">120</option>
+                        </select>
 
-                        <label for="session_date">Session Date:</label>
-                        <input type="date" id="session_date" name="session_date">
+                        <label for="location">Miesto konania:</label>
+                        <select id="location" name="location">
+                            <option value="Spišská Nová Ves">Spišská Nová Ves</option>
+                            <option value="Žilina">Žilina</option>
+                            <option value="Košice">Košice</option>
+                        </select>
 
-                        <label for="duration">Duration:</label>
-                        <input type="text" id="duration" name="duration">
-
-                        <label for="location">Location:</label>
-                        <input type="text" id="location" name="location">
-
-                        <label for="status">Status:</label>
-                        <input type="text" id="status" name="status">
-
-                        <label for="car_id">Car ID:</label>
-                        <input type="text" id="car_id" name="car_id">
-
-                        <input type="submit" value="Submit">
+                        <label for="session_category">Kategoria vozidla:</label>
+                        <select id="session_category" name="session_category">
+                            <option value="Osobný automobil B">Osobný automobil B</option>
+                            <option value="Malý motocykel AM">Malý motocykel AM</option>
+                            <option value="Veľký motocykel A1">Veľký motocykel A1</option>
+                            <option value="Veľký motocykel A2">Veľký motocykel A2</option>
+                            <option value="Veľký motocykel A">Veľký motocykel A</option>
+                            <option value="Nákladný automobil C">Nákladný automobil C</option>
+                            <option value="Autobus D">Autobus D</option>
+                            <option value="Traktor T">Traktor T</option>
+                            <option value="Príves">Príves</option>
+                        </select>
+                        <div class="button-container">
+                        <input class="w-25 btn btn-lg btn-outline-primary" type="submit" value="Pridať">
+                        </div>
                     </form>
 
                 @if(isset($drivingSessions) && $drivingSessions->count() > 0)
@@ -45,7 +55,6 @@
                                     <th class="with-border">Trvanie (min.)</th>
                                     <th class="with-border">Miesto konania</th>
                                     <th class="with-border">Stav</th>
-                                    <th class="with-border">Auto</th>
                                     <th class="with-border">Skupina</th>
                                 </tr>
                                 @foreach($drivingSessions as $session)
@@ -53,9 +62,8 @@
                                         <td class="with-border">{{ $session->session_date }}</td>
                                         <td class="with-border">{{ $session->duration }}</td>
                                         <td class="with-border">{{ $session->location }}</td>
-                                        <td class="with-border">{{ $session->status}}</td>
-                                        <td class="with-border">{{ $session->make }} {{ $session->model }}</td>
-                                        <td class="with-border">{{ $session->type }}</td>
+                                        <td class="with-border">{{ $session->status }}</td>
+                                        <td class="with-border">{{ $session->session_category }}</td>
                                     </tr>
                                 @endforeach
                             </table>

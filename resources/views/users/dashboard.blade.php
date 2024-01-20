@@ -27,8 +27,14 @@
                                         <td class="with-border">{{ $session->duration }}</td>
                                         <td class="with-border">{{ $session->location }}</td>
                                         <td class="with-border">{{ $session->status}}</td>
-                                        <td class="with-border">{{ $session->make }} {{ $session->model }}</td>
-                                        <td class="with-border">{{ $session->type }}</td>
+                                        <td class="with-border">
+                                            <select name="car" id="car" >
+                                                <option value="volkswagen">volkswagen</option>
+                                                <option value="audi">audi</option>
+                                                <option value="ford">ford</option>
+                                            </select>
+                                        </td>
+                                        <td class="with-border">{{ $session->session_category}}</td>
                                     </tr>
                                 @endforeach
                             </table>

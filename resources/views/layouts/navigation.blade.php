@@ -21,13 +21,7 @@
                         {{ __('Prihlasovanie jázd') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    @if(Auth::user()->role == 'admin')
-                        <x-nav-link :href="route('update-users')" :active="request()->routeIs('update-users')">
-                            {{ __('Úprava užívateľov') }}
-                        </x-nav-link>
-                    @endif
-                </div>
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     @if(Auth::user()->role == 'instruktor' || Auth::user()->role == 'admin')
                         <x-nav-link :href="route('driving-sessions')" :active="request()->routeIs('driving-sessions')">
@@ -36,6 +30,13 @@
                     @endif
                 </div>
 
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    @if(Auth::user()->role == 'admin')
+                        <x-nav-link :href="route('update-users')" :active="request()->routeIs('update-users')">
+                            {{ __('Úprava užívateľov') }}
+                        </x-nav-link>
+                    @endif
+                </div>
             </div>
 
             <!-- Settings Dropdown -->

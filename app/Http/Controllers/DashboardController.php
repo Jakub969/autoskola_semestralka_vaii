@@ -16,15 +16,17 @@ class DashboardController extends Controller
         $payment = Payment::where('email', $user->email)->first();
 
         if ($payment) {
+            $course_name = preg_replace('/\s*\([^)]*\)/', '', $payment->course_name);
             $drivingSessions = DB::table('driving_sessions')
-                ->join('cars', 'driving_sessions.car_id', '=', 'cars.id')
-                ->where('driving_sessions.student_id', $payment->user_id)
-                ->select('driving_sessions.*', 'cars.make', 'cars.model', 'cars.type')
+                ->where('session_category', $course_name)
                 ->get();
-        } else {
+        }
+        else {
             $drivingSessions = collect();
         }
 
         return view('/users/dashboard', ['drivingSessions' => $drivingSessions]);
     }
+
+
 }

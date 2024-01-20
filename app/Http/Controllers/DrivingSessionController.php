@@ -15,22 +15,28 @@ class DrivingSessionController extends Controller
     {
         $drivingSession = new DrivingSession;
 
-        $drivingSession->instructor_id = $request->instructor_id;
-        $drivingSession->student_id = $request->student_id;
-        $drivingSession->session_date = $request->session_date;
+        $drivingSession->instructor_id = Auth::id();
+        $drivingSession->student_id = null;
+        $request->validate([
+            'session_date' => 'required|date',
+        ]);
+        $session_date = str_replace('T', ' ', $request->input('session_date'));
+        $drivingSession->session_date = $session_date;
         $drivingSession->duration = $request->duration;
         $drivingSession->location = $request->location;
-        $drivingSession->status = $request->status;
-        $drivingSession->car_id = $request->car_id;
+        $drivingSession->status = 'naplánovaná';
+        $drivingSession->car_id = null;
+        $drivingSession->session_category = $request->session_category;
 
         $drivingSession->save();
 
         return redirect()->route('driving-sessions');
-
     }
+
 
     public function show()
     {
         return redirect()->route('driving-sessions');
     }
+
 }
