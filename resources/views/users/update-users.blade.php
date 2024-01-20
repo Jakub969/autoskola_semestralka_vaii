@@ -28,7 +28,7 @@
                                 </tr>
                                 @foreach($users as $user)
                                     <tr>
-                                        <td class="with-border">{{ $user->name }} {{ $user->id }}</td>
+                                        <td class="with-border">{{ $user->name }}</td>
                                         <td class="with-border">{{ $user->email }}</td>
                                         <td class="with-border">
                                             <select name="role" id="role" onchange="updateRole({{ $user->id }}, this)" data-original-role="{{ $user->role }}">

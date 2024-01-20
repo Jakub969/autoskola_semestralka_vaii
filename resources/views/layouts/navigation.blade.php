@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ asset('css/mystylesheet.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <script src="{{ asset('js/uprava_pouzivatelov.js') }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -26,6 +27,13 @@
                     @if(Auth::user()->role == 'instruktor' || Auth::user()->role == 'admin')
                         <x-nav-link :href="route('driving-sessions')" :active="request()->routeIs('driving-sessions')">
                             {{ __('Termíny jazd') }}
+                        </x-nav-link>
+                    @endif
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    @if(Auth::user()->role == 'admin')
+                        <x-nav-link :href="route('update-car')" :active="request()->routeIs('update_car')">
+                            {{ __('Pridanie aut') }}
                         </x-nav-link>
                     @endif
                 </div>

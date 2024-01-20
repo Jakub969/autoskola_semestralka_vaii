@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PaymentController;
@@ -80,6 +81,12 @@ Route::post('/messages', [MessageController::class, 'store']);
 //Route::get('/update-users', [UserController::class, 'show'])->middleware(['auth', 'verified'])->name('update-users');
 
 Route::get('/users/update-users', [UserController::class, 'show'])->middleware('admin')->name('update-users');
+
+Route::get('/users/update-car', [CarController::class, 'index'])->middleware('admin')->name('update-car');
+
+Route::delete('/users/update-car', [CarController::class, 'destroy'])->name('delete-car');
+
+Route::post('/create-car', [CarController::class, 'store']);
 
 Route::post('/driving-sessions', [DrivingSessionController::class, 'store']);
 

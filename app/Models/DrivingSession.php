@@ -26,9 +26,10 @@ class DrivingSession extends Model
     ];
     public function getStatusAttribute()
     {
-        $now = Carbon::now();
-        $sessionStart = Carbon::parse($this->session_date);
-        $sessionEnd = Carbon::parse($this->session_date)->addMinutes($this->duration);
+        $now = Carbon::now('Europe/Bratislava');
+        $sessionStart = Carbon::parse($this->session_date, 'Europe/Bratislava');
+        $sessionEnd = Carbon::parse($this->session_date, 'Europe/Bratislava')->addMinutes($this->duration);
+
 
         if ($now->between($sessionStart, $sessionEnd)) {
             return 'prebiehajuca';
