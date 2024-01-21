@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     @if(isset($sessions) && $sessions->count() > 0)
-                        <h3>Zoznam používateľov čo sú prihlásený na termíny jázd:</h3>
+                        <h3>Zoznam používateľov, ktorí sú prihlásení na termíny jázd:</h3>
                         <div class="table-responsive">
                             <table class="full-width-centered">
                                 <tr>
