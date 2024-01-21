@@ -15,13 +15,13 @@ function editRow(button, session_id) {
             cells[i].contentEditable = true;
         }
     }
-    cells[1].innerHTML = '<select><option value="60">60</option><option value="90">90</option><option value="120">120</option></select>';
-    cells[2].innerHTML = '<select><option value="Spišská Nová Ves">Spišská Nová Ves</option><option value="Žilina">Žilina</option><option value="Košice">Košice</option></select>';
-    cells[4].innerHTML = '<select><option value="Osobný automobil B">Osobný automobil B</option><option value="Malý motocykel AM">Malý motocykel AM</option><option value="Veľký motocykel A1">Veľký motocykel A1</option>' +
+    cells[1].innerHTML = '<select id="durationEdited"><option value="60">60</option><option value="90">90</option><option value="120">120</option></select>';
+    cells[2].innerHTML = '<select id="locationEdited"><option value="Spišská Nová Ves">Spišská Nová Ves</option><option value="Žilina">Žilina</option><option value="Košice">Košice</option></select>';
+    cells[4].innerHTML = '<select id="session_categoryEdited"><option value="Osobný automobil B">Osobný automobil B</option><option value="Malý motocykel AM">Malý motocykel AM</option><option value="Veľký motocykel A1">Veľký motocykel A1</option>' +
         '<option value="Veľký motocykel A2">Veľký motocykel A2</option><option value="Veľký motocykel A">Veľký motocykel A</option><option value="Nákladný automobil C">Nákladný automobil C</option>' +
         '<option value="Autobus D">Autobus D</option><option value="Traktor T">Traktor T</option><option value="Príves">Príves</option></select>';
     button.innerHTML = '<i class="bi bi-check-lg"></i>';
-    button.onclick = function() { updateRow(this, drivingSession); };
+    button.onclick = function() { updateRow(this); };
 }
 
 
@@ -30,9 +30,9 @@ function updateRow(button) {
     var cells = row.getElementsByTagName('td');
     drivingSession = {
         id: originalDrivingSession.id,
-        duration: document.getElementById('duration').value,
-        location: document.getElementById('location').value,
-        session_category: document.getElementById('session_category').value,
+        duration: document.getElementById('durationEdited').value,
+        location: document.getElementById('locationEdited').value,
+        session_category: document.getElementById('session_categoryEdited').value,
     };
     console.log(drivingSession);
     if (JSON.stringify(drivingSession) !== JSON.stringify(originalDrivingSession)) {
