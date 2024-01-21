@@ -1,3 +1,5 @@
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<script src="{{ asset('js/editacia_jazd.js') }}"></script>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -68,6 +70,8 @@
                                             <th>Miesto konania</th>
                                             <th>Stav</th>
                                             <th>Skupina</th>
+                                            <th></th>
+                                            <th></th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -78,6 +82,18 @@
                                                 <td>{{ $session->location }}</td>
                                                 <td>{{ $session->status }}</td>
                                                 <td>{{ $session->session_category }}</td>
+                                                <td>
+                                                    <button type="button" onclick="editRow(this, {{$session->id}})"><i class="bi bi-pencil-square"></i></button>
+                                                </td>
+                                                <td>
+                                                    <form action="{{ route('delete-driving_session', ['session_id' => $session->id]) }}" method="POST" onsubmit="return confirm('Naozaj chcete vymazať tento záznam?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit">
+                                                            <i class="bi bi-trash"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                         @endforeach
                                         </tbody>
@@ -86,7 +102,6 @@
                             @endif
                         </div>
                     </div>
-
         </div>
     </div>
 </x-app-layout>

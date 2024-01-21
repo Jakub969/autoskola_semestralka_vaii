@@ -91,13 +91,15 @@ Route::post('/create-car', [CarController::class, 'store']);
 Route::post('/driving-sessions', [DrivingSessionController::class, 'store']);
 
 //Route::get('/users/driving-sessions', [DrivingSessionController::class, 'show'])->middleware(['admin', 'instruktor'])->name('driving-sessions');
-Route::get('/users/driving-sessions', function () {
-    return view('users.driving-sessions', ['drivingSessions' => DrivingSession::all()]);
-})->name('driving-sessions');
+Route::get('/users/driving-sessions', [DrivingSessionController::class, 'show'])->middleware(['auth', 'verified'])->name('driving-sessions');
 
 Route::post('/update-user-roles', [UserController::class, 'updateRoles']);
 
 Route::post('/update-car/{car}', [CarController::class, 'update']);
+
+Route::post('/update-driving-session/{session}', [DrivingSessionController::class, 'update']);
+
+Route::delete('/users/driving-sessions/{session_id}', [DrivingSessionController::class, 'destroy'])->name('delete-driving_session');
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');

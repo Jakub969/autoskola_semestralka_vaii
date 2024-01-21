@@ -8,6 +8,7 @@ use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class DrivingSessionController extends Controller
 {
@@ -36,7 +37,25 @@ class DrivingSessionController extends Controller
 
     public function show()
     {
-        return redirect()->route('driving-sessions');
+        $userId = Auth::id();
+        $drivingSessions = DrivingSession::where('instructor_id', $userId)->get();
+        return view('/users/driving-sessions', ['drivingSessions' => $drivingSessions]);
     }
 
+    public function destroy(DrivingSession $session_id)
+    {
+        $session_id->delete();
+        return Redirect::to('/users/driving-sessions');
+    }
+
+    public function update(Request $request, DrivingSession $session)
+    {
+        $validatedData = $request->validate([
+            'duration' => 'required',
+            'location' => 'required',
+            'session_category' => 'required',
+        ]);
+        $session->update($validatedData);
+        return response()->json(['success' => 'Termín bol úspešne aktualizovaný']);
+    }
 }
