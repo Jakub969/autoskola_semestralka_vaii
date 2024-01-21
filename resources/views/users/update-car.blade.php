@@ -1,3 +1,5 @@
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<script src="{{ asset('js/editacia_aut.js') }}"></script>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -80,15 +82,15 @@
                                             <tbody>
                                             @foreach($cars as $car)
                                                 <tr>
-                                                    <td>{{ $car->car_brand }}</td>
-                                                    <td>{{ $car->model }}</td>
-                                                    <td>{{ $car->year }}</td>
-                                                    <td>{{ $car->license_plate }}</td>
-                                                    <td>{{ $car->type }}</td>
+                                                    <td contenteditable="false">{{ $car->car_brand }}</td>
+                                                    <td contenteditable="false">{{ $car->model }}</td>
+                                                    <td contenteditable="false">{{ $car->year }}</td>
+                                                    <td contenteditable="false">{{ $car->license_plate }}</td>
+                                                    <td contenteditable="false">{{ $car->type }}</td>
                                                     <td>
-                                                        <button type="submit"><i class="bi bi-pencil-square"></i></button>
+                                                        <button type="button" onclick="editRow(this, {{$car->id}})"><i class="bi bi-pencil-square"></i></button>
                                                     </td>
-                                                    <td> <!--TODO nevymaže auto z databázy !-->
+                                                    <td>
                                                         <form action="{{ route('delete-car', ['car' => $car->id]) }}" method="POST" onsubmit="return confirm('Naozaj chcete vymazať tento záznam?');">
                                                             @csrf
                                                             @method('DELETE')

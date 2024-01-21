@@ -1,4 +1,5 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<script src="{{ asset('js/uprava_pouzivatelov.js') }}"></script>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">

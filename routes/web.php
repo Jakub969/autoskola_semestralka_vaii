@@ -84,7 +84,7 @@ Route::get('/users/update-users', [UserController::class, 'show'])->middleware('
 
 Route::get('/users/update-car', [CarController::class, 'index'])->middleware('admin')->name('update-car');
 
-Route::delete('/users/update-car', [CarController::class, 'destroy'])->name('delete-car');
+Route::delete('/users/update-car/{car}', [CarController::class, 'destroy'])->name('delete-car');
 
 Route::post('/create-car', [CarController::class, 'store']);
 
@@ -97,6 +97,7 @@ Route::get('/users/driving-sessions', function () {
 
 Route::post('/update-user-roles', [UserController::class, 'updateRoles']);
 
+Route::post('/update-car/{car}', [CarController::class, 'update']);
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');
