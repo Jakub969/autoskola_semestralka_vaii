@@ -5,6 +5,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SessionViewController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\UserController;
 use App\Models\DrivingSession;
@@ -100,6 +101,12 @@ Route::post('/update-car/{car}', [CarController::class, 'update']);
 Route::post('/update-driving-session/{session}', [DrivingSessionController::class, 'update']);
 
 Route::delete('/users/driving-sessions/{session_id}', [DrivingSessionController::class, 'destroy'])->name('delete-driving_session');
+
+Route::post('/update-session', [DashboardController::class, 'updateSession']);
+
+Route::post('/sign-out', [DashboardController::class, 'signOut']);
+
+Route::get('/sessions-view', [SessionViewController::class, 'showSessions'])->name('sessions-view');
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');

@@ -49,7 +49,7 @@ class User extends Authenticatable
     ];
     public function drivingSessions()
     {
-        return $this->hasMany(DrivingSession::class);
+        return $this->hasMany(DrivingSession::class, 'student_id');
     }
 
     public function payments()

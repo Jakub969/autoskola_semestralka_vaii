@@ -1,3 +1,5 @@
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<script src="{{ asset('js/prihlasenie_odhlasenie_studenta.js') }}"></script>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -10,32 +12,45 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     @if(isset($drivingSessions) && $drivingSessions->count() > 0)
+                        @csrf
                         <h3>Tvoje prihlásené jazdy:</h3>
                         <div class="table-responsive">
                             <table class="full-width-centered">
                                 <tr>
-                                    <th class="with-border">Konanie jazdy</th>
-                                    <th class="with-border">Trvanie (min.)</th>
-                                    <th class="with-border">Miesto konania</th>
-                                    <th class="with-border">Stav</th>
-                                    <th class="with-border">Auto</th>
-                                    <th class="with-border">Skupina</th>
+                                    <th>Konanie jazdy</th>
+                                    <th>Trvanie (min.)</th>
+                                    <th>Miesto konania</th>
+                                    <th>Stav</th>
+                                    <th>Auto</th>
+                                    <th>Skupina</th>
+                                    <th></th>
                                 </tr>
                                 @foreach($drivingSessions as $session)
-                                    <tr>
-                                        <td class="with-border">{{ $session->session_date }}</td>
-                                        <td class="with-border">{{ $session->duration }}</td>
-                                        <td class="with-border">{{ $session->location }}</td>
-                                        <td class="with-border">{{ $session->status}}</td>
-                                        <td class="with-border">
-                                            <select name="car" id="car" >
-                                                <option value="volkswagen">volkswagen</option>
-                                                <option value="audi">audi</option>
-                                                <option value="ford">ford</option>
+                                    @if($session->student_id == Auth::id() || $session->student_id == null)
+                                        <tr class="{{ ($session->student_id == Auth::id()) ? 'signed-in' : '' }}">
+                                        <td>{{ $session->session_date }}</td>
+                                        <td>{{ $session->duration }}</td>
+                                        <td>{{ $session->location }}</td>
+                                        <td>{{ $session->status}}</td>
+                                        <td>
+                                            <select name="car" id="car" class="form-control">
+                                                @foreach($cars as $car)
+                                                    <option value="{{ $car->id }}">{{ $car->car_brand }} {{ $car->model }}</option>
+                                                @endforeach
                                             </select>
                                         </td>
-                                        <td class="with-border">{{ $session->session_category}}</td>
+                                        <td>{{ $session->session_category}}</td>
+                                        @if($session->student_id == null)
+                                            <td>
+                                                <button type="button" data-session-id="{{$session->id}}" onclick="signIn(this, {{$car->id}})"><i class="bi bi-bookmark-check"></i></button>
+                                            </td>
+                                        @else
+                                            <td>
+                                                <button type="button" data-session-id="{{$session->id}}" onclick="signOut(this)"><i class="bi bi-x-circle"></i></button>
+                                            </td>
+                                        @endif
                                     </tr>
+                                    @endif
                                 @endforeach
                             </table>
                         </div>

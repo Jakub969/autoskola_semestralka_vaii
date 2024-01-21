@@ -16,12 +16,19 @@
                 </div>
 
                 <!-- Navigation Links -->
+                @if(Auth::user()->role == 'instruktor' || Auth::user()->role == 'admin')
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('sessions-view')" :active="request()->routeIs('sessions-view')">
+                            {{ __('Prehľad jázd') }}
+                        </x-nav-link>
+                    </div>
+                @else
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Prihlasovanie jázd') }}
                     </x-nav-link>
                 </div>
-
+                @endif
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     @if(Auth::user()->role == 'instruktor' || Auth::user()->role == 'admin')
                         <x-nav-link :href="route('driving-sessions')" :active="request()->routeIs('driving-sessions')">

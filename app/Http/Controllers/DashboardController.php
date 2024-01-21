@@ -20,13 +20,35 @@ class DashboardController extends Controller
             $drivingSessions = DB::table('driving_sessions')
                 ->where('session_category', $course_name)
                 ->get();
+            $cars = DB::table('cars')
+                ->where('type', $course_name)
+                ->get();
         }
         else {
             $drivingSessions = collect();
+            $cars = collect();
         }
 
-        return view('/users/dashboard', ['drivingSessions' => $drivingSessions]);
+        return view('/users/dashboard', ['drivingSessions' => $drivingSessions, 'cars' => $cars]);
     }
 
+    public function updateSession(Request $request)
+    {
+        $session = DrivingSession::find($request->session_id);
+        $session->car_id = $request->car_id;
+        $session->student_id = Auth::user()->id;
+        $session->save();
 
+        return response()->json(['success' => true]);
+    }
+
+    public function signOut(Request $request)
+    {
+        $session = DrivingSession::find($request->session_id);
+        $session->car_id = null;
+        $session->student_id = null;
+        $session->save();
+
+        return response()->json(['success' => true]);
+    }
 }
