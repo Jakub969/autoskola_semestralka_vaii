@@ -117,7 +117,7 @@
 
                             <div class="col-md-6">
                                 <label for="cc-number" class="form-label">Číslo karty</label>
-                                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                                <input type="number" class="form-control" id="cc-number" placeholder="" required="">
                                 <div class="invalid-feedback">
                                     Číslo karty je povinné
                                 </div>
@@ -125,7 +125,7 @@
 
                             <div class="col-md-3">
                                 <label for="cc-expiration" class="form-label">Dátum expirácie</label>
-                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                                <input type="number" class="form-control" id="cc-expiration" placeholder="" required="">
                                 <div class="invalid-feedback">
                                     Dátum expirácie je povinný
                                 </div>
@@ -133,7 +133,7 @@
 
                             <div class="col-md-3">
                                 <label for="cc-cvv" class="form-label">CVV</label>
-                                <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                                <input type="number" class="form-control" id="cc-cvv" placeholder="" required="">
                                 <div class="invalid-feedback">
                                     Bezpečnostný kód je povinný
                                 </div>

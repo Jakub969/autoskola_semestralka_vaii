@@ -28,28 +28,37 @@
                                 @foreach($drivingSessions as $session)
                                     @if($session->student_id == Auth::id() || $session->student_id == null)
                                         <tr class="{{ ($session->student_id == Auth::id()) ? 'signed-in' : '' }}">
-                                        <td>{{ $session->session_date }}</td>
-                                        <td>{{ $session->duration }}</td>
-                                        <td>{{ $session->location }}</td>
-                                        <td>{{ $session->status}}</td>
-                                        <td>
-                                            <select name="car" id="car" class="form-control">
-                                                @foreach($cars as $car)
-                                                    <option value="{{ $car->id }}">{{ $car->car_brand }} {{ $car->model }}</option>
-                                                @endforeach
-                                            </select>
-                                        </td>
-                                        <td>{{ $session->session_category}}</td>
-                                        @if($session->student_id == null)
-                                            <td>
-                                                <button type="button" data-session-id="{{$session->id}}" onclick="signIn(this, {{$car->id}})"><i class="bi bi-bookmark-check"></i></button>
-                                            </td>
-                                        @else
-                                            <td>
-                                                <button type="button" data-session-id="{{$session->id}}" onclick="signOut(this)"><i class="bi bi-x-circle"></i></button>
-                                            </td>
-                                        @endif
-                                    </tr>
+                                            <td>{{ $session->session_date }}</td>
+                                            <td>{{ $session->duration }}</td>
+                                            <td>{{ $session->location }}</td>
+                                            <td>{{ $session->status}}</td>
+                                            @if(isset($cars) && count($cars) > 0)
+                                                <td>
+                                                    <select name="car" id="car" class="form-control">
+                                                        @foreach($cars as $car)
+                                                            <option
+                                                                value="{{ $car->id }}">{{ $car->car_brand }} {{ $car->model }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </td>
+                                            @endif
+                                            <td>{{ $session->session_category}}</td>
+                                            @if($session->student_id == null)
+                                                @if(isset($cars) && count($cars) > 0)
+                                                    <td>
+                                                        <button type="button" data-session-id="{{$session->id}}"
+                                                                onclick="signIn(this, {{$car->id}})"><i
+                                                                class="bi bi-bookmark-check"></i></button>
+                                                    </td>
+                                                @endif
+                                            @else
+                                                <td>
+                                                    <button type="button" data-session-id="{{$session->id}}"
+                                                            onclick="signOut(this)"><i class="bi bi-x-circle"></i>
+                                                    </button>
+                                                </td>
+                                            @endif
+                                        </tr>
                                     @endif
                                 @endforeach
                             </table>
